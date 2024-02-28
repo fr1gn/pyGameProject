@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="65dc0d56-78ec-49de-861d-eb3d55a27e32" name="Changes" comment="pyGame">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bluepad.png" beforeDir="false" afterPath="$PROJECT_DIR$/bluepad.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disc.png" beforeDir="false" afterPath="$PROJECT_DIR$/disc.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redpad.png" beforeDir="false" afterPath="$PROJECT_DIR$/redpad.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +17,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -84,6 +93,11 @@
       <updated>1707977590201</updated>
       <workItem from="1707977592969" duration="4037000" />
       <workItem from="1708270997021" duration="234000" />
+      <workItem from="1708351475231" duration="70000" />
+      <workItem from="1708490687534" duration="463000" />
+      <workItem from="1709048288961" duration="1141000" />
+      <workItem from="1709058722739" duration="10000" />
+      <workItem from="1709094055757" duration="1045000" />
     </task>
     <task id="LOCAL-00001" summary="pyGame">
       <option name="closed" value="true" />
@@ -101,17 +115,48 @@
       <option name="project" value="LOCAL" />
       <updated>1707977756668</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="pyGame">
+      <option name="closed" value="true" />
+      <created>1708351486035</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708351486035</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/damir" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pyGame" />
     <option name="LAST_COMMIT_MESSAGE" value="pyGame" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/pyGameProject$main.coverage" NAME="main Coverage Results" MODIFIED="1708271001100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyGameProject$main.coverage" NAME="main Coverage Results" MODIFIED="1709095102762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

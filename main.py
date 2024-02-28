@@ -4,6 +4,10 @@ from pygame.locals import *
 # Initialize Pygame
 pygame.init()
 
+#sounds
+sound1 = pygame.mixer.Sound('red.ogg')
+sound2 = pygame.mixer.Sound('blue.ogg')
+
 # Define colors
 white = (255, 255, 255)
 black = (0, 0, 0)
@@ -34,7 +38,9 @@ disc_velocity = [7, 7]
 disc_img = pygame.image.load('disc.png')
 blue_paddle_img = pygame.image.load('bluepad.png')
 red_paddle_img = pygame.image.load('redpad.png')
-background = pygame.image.load('airhockey.png')
+background = pygame.image.load('airhockey.jpg')
+endgame1 = pygame.image.load('endgame1.jpg')
+endgame2 = pygame.image.load('endgame2.jpg')
 
 # Scores
 score1, score2 = 0, 0
@@ -49,6 +55,38 @@ def draw_text(text, color, x, y):
     text_surface = font.render(text, True, color)
     text_rect = text_surface.get_rect(center=(x, y))
     screen.blit(text_surface, text_rect)
+
+def main_menu(winner):
+    clock = pygame.time.Clock()
+    menu_running = True
+
+    while menu_running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                exit()
+
+        keys = pygame.key.get_pressed()
+
+        if keys[K_RETURN]:
+            # Reset scores and go back to the game
+            global score1, score2
+            score1, score2 = 0, 0
+            reset_puck()
+            game_loop()
+
+        if keys[K_ESCAPE]:
+            pygame.quit()
+            exit()
+
+        if winner == 2:
+            screen.blit(endgame1, (0, 0))
+            sound1.play()
+        else:
+            screen.blit(endgame2, (0, 0))
+            sound2.play()
+        pygame.display.flip()
+        clock.tick(60)
 
 def game_loop():
     global score1, score2
@@ -105,22 +143,28 @@ def game_loop():
             disc_velocity[0] *= -1
 
         # Goal scoring
-        if disc.colliderect(goal1):
-            score2 += 1
-            reset_puck()
-
         if disc.colliderect(goal2):
             score1 += 1
-            reset_puck()
+            if score1 == 10:
+                main_menu(winner=1)
+            else:
+                reset_puck()
+
+        if disc.colliderect(goal1):
+            score2 += 1
+            if score2 == 10:
+                main_menu(winner=2)
+            else:
+                reset_puck()
 
         # Draw everything
-        screen.fill(black)
+        screen.blit(background, (0, 0))  # Draw the background image
         pygame.draw.rect(screen, light_blue, goal1)
         pygame.draw.rect(screen, light_blue, goal2)
         pygame.draw.rect(screen, white, paddle1)
         pygame.draw.rect(screen, white, paddle2)
-        pygame.draw.line(screen, white, (screen_width // 2, 0), (screen_width // 2, screen_height), 5)
-        pygame.draw.circle(screen, white, (screen_width // 2, screen_height // 2), screen_width // 10, 5)
+        pygame.draw.line(screen, white, (screen_width // 2, 0), (screen_width // 2, screen_height), 10)
+        pygame.draw.circle(screen, white, (screen_width // 2, screen_height // 2), screen_width // 10, 10)
         screen.blit(disc_img, disc)
         screen.blit(blue_paddle_img, (paddle1.x - 5, paddle1.y - 5))
         screen.blit(red_paddle_img, (paddle2.x - 5, paddle2.y - 5))
